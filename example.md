@@ -2,7 +2,7 @@
 
 Test1
 
-![Image #1](src-to-img-1.com)
+![Image #1](src-to-img-1.com|width=30|float=right)
 ![Image #2](src-to-img-2.com)
 ![Image #3](src-to-img-2.com)
 ![Image #4](src-to-img-2.com)

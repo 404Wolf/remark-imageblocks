@@ -1,13 +1,20 @@
 import fs from "fs";
 import { retext } from "retext";
 import remarkParse from "remark-parse";
-import remarkHtml from "remark-html";
-import multiimage from "./index.js";
+import remarkImageBlock from "./index.js";
+import remarkRehype from "remark-rehype/lib/index.js";
+import { imgBlockHandler } from "./handlers.js";
+import rehypeStringify from "rehype-stringify/lib/index.js";
 
 const buffer = fs.readFileSync("./example.md");
 
 retext()
-    .use(multiimage)
     .use(remarkParse)
-    .use(remarkHtml)
-    .process(buffer, (err, file) => fs.writeFileSync("./example.html", String(file)));
+    .use(remarkImageBlock)
+    .use(remarkRehype, {handlers: {imgBlock: imgBlockHandler}})
+    .use(rehypeStringify)
+    .process(buffer, (err, file) => {
+        const rendered = String(file);
+        console.log(rendered);
+        fs.writeFileSync("./example.html", String(file))
+    });
