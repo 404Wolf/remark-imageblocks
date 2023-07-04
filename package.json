@@ -1,0 +1,17 @@
+{
+  "name": "multiimage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "remark-html": "^15.0.2",
+    "remark-parse": "^10.0.2",
+    "retext": "^8.1.0"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
