@@ -1,18 +1,20 @@
 <h1>An example document with a multiimage</h1>
-
 <p>Test1</p>
-
+<imgBlock
+    alts="Image #1;Image #2;Image #3;Image #4"
+    srcs="https://src-to-img-1.com;https://src-to-img-2.com;https://src-to-img-2.com;https://src-to-img-2.com"
+    titles=";;;"
+    properties=";;;"
+></imgBlock>
 <p>
-    <imgBlock
-        alts="Image #1;Image #2;Image #3;Image #4"
-        srcs="Image #1;Image #2;Image #3;Image #4"
-        titles=";;;"
-        children=""
-    ></imgBlock>
+    Test2
+    <img alt="Normal Image" src="https://src-to-normal-img.com" float="left" width="50" />
 </p>
-
-<p>Test2 <img src="src-to-normal-img.com" alt="Normal Image" /></p>
-
 <p>
-    <img src="src-to-normal-img.com" alt="Normal Image But Isolated" />
+    <img
+        alt="Normal Image But Isolated"
+        src="https://src-to-normal-img.com"
+        width="35"
+        float="right"
+    />
 </p>
