@@ -8,7 +8,7 @@ export default function remarkImageBlock() {
                 const children = node.children.filter(
                     child => !(child.type === "text" && child.value === "\r\n")
                 )
-                if (children.every(child => child.type === "image") && children.length > 1) {
+                if (children && children.every(child => child.type === "image") && children.length > 1) {
                     parent.children[index] = {
                         type: "imgBlock",
                         alts: children.map(child => child.alt),
@@ -23,7 +23,8 @@ export default function remarkImageBlock() {
                         position: {
                             start: children[0].position.start,
                             end: children.slice(-1)[0].position.end
-                        }
+                        },
+                        children: []
                     }
                 }
             }

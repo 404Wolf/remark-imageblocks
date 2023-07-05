@@ -10,7 +10,8 @@ export function imgBlockHandler(state, node, parent) {
             srcs: node.srcs.map(normalizeUri).join(";"),
             titles: node.titles.join(";"),
             properties: node.properties.join(";")
-        }
+        },
+        children: []
     }
 }
 
